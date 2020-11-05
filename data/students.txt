@@ -1,0 +1,10 @@
+1 Alan Turing UNDERGRAD alan.turing@uni.edu Yes M 4.00 132
+2 Claude Shannon MASTERS claude.shannon@uni.edu No M 3.09 22
+3 Edgser Dijkstra UNDERGRAD edgser.dijkstra@uni.edu No M 2.56 34
+4 Barbara Liskov MASTERS barbara.liskov@uni.edu No F 2.99 29
+5 Grace Hopper UNDERGRAD alan.turing@uni.edu Yes F 3.61 108
+6 Ron Rivest PHD ron.rivest@uni.edu Yes M 3.88 32
+7 Margaret Hamilton UNDERGRAD margaret.hamilton@uni.edu No F 2.06 110
+8 Douglas Engelbart UNDERGRAD douglas.engelbart@uni.edu No M 1.89 40
+9 Yoshua Bengio PHD joshua.bengio@uni.edu Yes M 3.94 128
+10 David Patterson UNDERGRAD david.patterson@uni.edu No M 2.67 55
