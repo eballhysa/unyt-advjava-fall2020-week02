@@ -30,11 +30,11 @@ public class MainAppWithLambdas {
     private void go() {
         List<Student> students = studentRepository.getAll();
         printTranscriptForFemaleUndergrads(students);
-        sendNotifToCSStudentsInCreditRangeSortedByGpa(students, 2.00, 2.50);
+        sendNotifToCSStudentsInGpaRangeSortedByGpa(students, 2.00, 2.50);
         issueHonorsToActiveStudents(students);
     }
 
-    private void sendNotifToCSStudentsInCreditRangeSortedByGpa(List<Student> students, double lo, double hi) {
+    private void sendNotifToCSStudentsInGpaRangeSortedByGpa(List<Student> students, double lo, double hi) {
         students.stream()
                 .filter(s -> "CS".equals(s.getDepartment()))
                 .filter(s -> s.getGpa() >= lo)
