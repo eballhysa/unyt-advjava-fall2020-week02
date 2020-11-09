@@ -58,8 +58,6 @@ public class MainAppManually {
 
     private void issueHonorsToActiveStudents(List<Student> students) {
         doStuff(students, new StudentHonorsIssuer(), new StudentCheckerNotYetGraduated(), new StudentCheckerByGpaRange(3.5, 4.00));
-        // TODO - implement this method
-        // only active students (i.e. not yet graduated) with GPA >= 3.5
     }
 
     private void doStuff(List<Student> students, StudentProcessor processor, StudentChecker ... checkers) {
