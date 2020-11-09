@@ -1,4 +1,4 @@
-package com.eltonb.fp.data;
+package com.eltonb.fp.data.interfaces;
 
 import com.eltonb.fp.model.Student;
 

@@ -1,5 +1,6 @@
-package com.eltonb.fp.data;
+package com.eltonb.fp.data.impl;
 
+import com.eltonb.fp.data.interfaces.StudentRepository;
 import com.eltonb.fp.model.Gender;
 import com.eltonb.fp.model.Student;
 
@@ -38,12 +39,13 @@ public class StudentRepositoryFromFileImpl implements StudentRepository {
         student.setId(Integer.parseInt(data[0]));
         student.setName(data[1]);
         student.setSurname(data[2]);
-        student.setLevel(Student.Level.valueOf(data[3]));
-        student.setEmail(data[4]);
-        student.setGraduated("YES".equals(data[5]));
-        student.setGender(Gender.fromCode(data[6]));
-        student.setGpa(Double.parseDouble(data[7]));
-        student.setEarnedCredits(Integer.parseInt(data[8]));
+        student.setDepartment(data[3]);
+        student.setLevel(Student.Level.valueOf(data[4]));
+        student.setEmail(data[5]);
+        student.setGraduated("YES".equals(data[6]));
+        student.setGender(Gender.fromCode(data[7]));
+        student.setGpa(Double.parseDouble(data[8]));
+        student.setEarnedCredits(Integer.parseInt(data[9]));
         return student;
     }
 

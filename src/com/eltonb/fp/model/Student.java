@@ -15,6 +15,7 @@ public class Student {
     private Gender gender;
     private double gpa;
     private int earnedCredits;
+    private String department;
 
     public int getId() {
         return id;
@@ -88,6 +89,10 @@ public class Student {
         this.earnedCredits = earnedCredits;
     }
 
+    public String getDepartment() {return department;}
+
+    public void setDepartment(String department) {this.department = department;}
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -101,12 +106,13 @@ public class Student {
                 Objects.equals(surname, student.surname) &&
                 level == student.level &&
                 Objects.equals(email, student.email) &&
-                gender == student.gender;
+                gender == student.gender &&
+                Objects.equals(department, student.department);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, surname, level, email, graduated, gender, gpa, earnedCredits);
+        return Objects.hash(id, name, surname, level, email, graduated, gender, gpa, earnedCredits, department);
     }
 
     @Override
@@ -121,6 +127,7 @@ public class Student {
                 ", gender=" + gender +
                 ", gpa=" + gpa +
                 ", earnedCredits=" + earnedCredits +
+                ", department=" + department +
                 '}';
     }
 }
