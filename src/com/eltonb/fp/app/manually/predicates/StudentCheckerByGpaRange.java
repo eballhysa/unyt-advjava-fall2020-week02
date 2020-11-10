@@ -13,6 +13,6 @@ public class StudentCheckerByGpaRange implements StudentChecker {
 
     @Override
     public boolean check(Student s) {
-        return s.getGpa() >= lo && s.getGpa() <= hi;
+        return s.gpa() >= lo && s.gpa() <= hi;
     }
 }

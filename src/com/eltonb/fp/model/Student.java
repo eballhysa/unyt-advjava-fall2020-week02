@@ -1,97 +1,72 @@
 package com.eltonb.fp.model;
 
+import javafx.util.Builder;
+
 import java.util.Objects;
 
 public class Student {
 
-    public enum Level {UNDERGRAD, MASTERS, PHD};
+    private final int id;
+    private final String name;
+    private final String surname;
+    private final Level level;
+    private final String email;
+    private final boolean graduated;
+    private final Gender gender;
+    private final double gpa;
+    private final int earnedCredits;
+    private final String department;
 
-    private int id;
-    private String name;
-    private String surname;
-    private Level level;
-    private String email;
-    private boolean graduated;
-    private Gender gender;
-    private double gpa;
-    private int earnedCredits;
-    private String department;
+    public Student(Builder builder) {
+        this.id = builder.id;
+        this.name = builder.name;
+        this.surname = builder.surname;
+        this.department = builder.department;
+        this.email = builder.email;
+        this.level = builder.level;
+        this.gender = builder.gender;
+        this.gpa = builder.gpa;
+        this.earnedCredits = builder.earnedCredits;
+        this.graduated = builder.graduated;
+    }
 
-    public int getId() {
+    public int id() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
+    public String name() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurname() {
+    public String surname() {
         return surname;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public Level getLevel() {
+    public Level level() {
         return level;
     }
 
-    public void setLevel(Level level) {
-        this.level = level;
-    }
-
-    public String getEmail() {
+    public String email() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public boolean isGraduated() {
+    public boolean graduated() {
         return graduated;
     }
 
-    public void setGraduated(boolean graduated) {
-        this.graduated = graduated;
-    }
-
-    public Gender getGender() {
+    public Gender gender() {
         return gender;
     }
 
-    public void setGender(Gender gender) {
-        this.gender = gender;
-    }
-
-    public double getGpa() {
+    public double gpa() {
         return gpa;
     }
 
-    public void setGpa(double gpa) {
-        this.gpa = gpa;
-    }
-
-    public int getEarnedCredits() {
+    public int earnedCredits() {
         return earnedCredits;
     }
 
-    public void setEarnedCredits(int earnedCredits) {
-        this.earnedCredits = earnedCredits;
-    }
-
-    public String getDepartment() {return department;}
-
-    public void setDepartment(String department) {this.department = department;}
+    public String department() {return department;}
 
     @Override
     public boolean equals(Object o) {
@@ -129,5 +104,57 @@ public class Student {
                 ", earnedCredits=" + earnedCredits +
                 ", department=" + department +
                 '}';
+    }
+
+    public static class Builder {
+        private final int id;
+        private final String name;
+        private final String surname;
+        private Level level = Level.UNDERGRAD;
+        private Gender gender = null;
+        private String email = null;
+        private boolean graduated = false;
+        private double gpa = 0.0;
+        private int earnedCredits = 0;
+        private String department = null;
+
+        public Builder(int id, String name, String surname) {
+            this.id = id;
+            this.name = name;
+            this.surname = surname;
+        }
+
+        public Builder gender(Gender gender) {
+            this.gender = gender;
+            return this;
+        }
+        public Builder level(Level level) {
+            this.level = level;
+            return this;
+        }
+        public Builder email(String email) {
+            this.email = email;
+            return this;
+        }
+        public Builder department(String department) {
+            this.department = department;
+            return this;
+        }
+        public Builder gpa(double gpa) {
+            this.gpa = gpa;
+            return this;
+        }
+        public Builder earnedCredits(int earnedCredits) {
+            this.earnedCredits = earnedCredits;
+            return this;
+        }
+        public Builder graduated(boolean graduated) {
+            this.graduated = graduated;
+            return this;
+        }
+
+        public Student build() {
+            return new Student(this);
+        }
     }
 }

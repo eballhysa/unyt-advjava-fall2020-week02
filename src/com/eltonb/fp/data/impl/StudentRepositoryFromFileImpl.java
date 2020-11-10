@@ -2,6 +2,7 @@ package com.eltonb.fp.data.impl;
 
 import com.eltonb.fp.data.interfaces.StudentRepository;
 import com.eltonb.fp.model.Gender;
+import com.eltonb.fp.model.Level;
 import com.eltonb.fp.model.Student;
 
 import java.io.BufferedReader;
@@ -35,18 +36,19 @@ public class StudentRepositoryFromFileImpl implements StudentRepository {
 
     private Student newStudent(String dataLine) {
         String[] data = dataLine.split(" ");
-        Student student = new Student();
-        student.setId(Integer.parseInt(data[0]));
-        student.setName(data[1]);
-        student.setSurname(data[2]);
-        student.setDepartment(data[3]);
-        student.setLevel(Student.Level.valueOf(data[4]));
-        student.setEmail(data[5]);
-        student.setGraduated("YES".equals(data[6]));
-        student.setGender(Gender.fromCode(data[7]));
-        student.setGpa(Double.parseDouble(data[8]));
-        student.setEarnedCredits(Integer.parseInt(data[9]));
-        return student;
+        int id = Integer.parseInt(data[0]);
+        String name = data[1];
+        String surname = data[2];
+
+        return new Student.Builder(id, name, surname)
+                        .department(data[3])
+                        .level(Level.valueOf(data[4]))
+                        .email(data[5])
+                        .graduated("YES".equals(data[6]))
+                        .gender(Gender.fromCode(data[7]))
+                        .gpa(Double.parseDouble(data[8]))
+                        .earnedCredits(Integer.parseInt(data[9]))
+                        .build();
     }
 
 }

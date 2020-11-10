@@ -12,6 +12,6 @@ public class StudentCheckerByDepartment implements StudentChecker {
 
     @Override
     public boolean check(Student s) {
-        return this.department.equals(s.getDepartment());
+        return this.department.equals(s.department());
     }
 }

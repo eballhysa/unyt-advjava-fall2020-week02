@@ -12,6 +12,6 @@ public class StudentCheckerByGender implements StudentChecker {
 
     @Override
     public boolean check(Student s) {
-        return this.gender.equals(s.getGender());
+        return this.gender == s.gender();
     }
 }

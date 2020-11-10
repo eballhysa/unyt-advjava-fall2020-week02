@@ -4,6 +4,7 @@ import com.eltonb.fp.app.Utils;
 import com.eltonb.fp.data.interfaces.StudentRepository;
 import com.eltonb.fp.data.impl.StudentRepositoryFromFileImpl;
 import com.eltonb.fp.model.Gender;
+import com.eltonb.fp.model.Level;
 import com.eltonb.fp.model.Student;
 
 import java.util.ArrayList;
@@ -40,15 +41,15 @@ public class MainAppNoLambdas {
         sortedStudents.sort(new Comparator<Student>() {
             @Override
             public int compare(Student o1, Student o2) {
-                if (o1.getGpa() < o2.getGpa())
+                if (o1.gpa() < o2.gpa())
                     return -1;
-                if (o1.getGpa() > o2.getGpa())
+                if (o1.gpa() > o2.gpa())
                     return 1;
                 return 0;
             }
         });
         for (Student s : students) {
-            if ("CS".equals(s.getDepartment()) && s.getGpa() >= lo && s.getGpa() <= hi) {
+            if ("CS".equals(s.department()) && s.gpa() >= lo && s.gpa() <= hi) {
                 Utils.sendNotification(s);
             }
         }
@@ -56,7 +57,7 @@ public class MainAppNoLambdas {
 
     private void printTranscriptForFemaleUndergrads(List<Student> students) {
         for (Student s : students) {
-            if (s.getGender() == Gender.FEMALE && s.getLevel() == Student.Level.UNDERGRAD) {
+            if (s.gender() == Gender.FEMALE && s.level() == Level.UNDERGRAD) {
                 Utils.printTranscript(s);
             }
         }
@@ -64,7 +65,7 @@ public class MainAppNoLambdas {
 
     private void issueHonorsToActiveStudents(List<Student> students) {
         for (Student s : students) {
-            if (! s.isGraduated() && s.getGpa() >= 3.5) {
+            if (! s.graduated() && s.gpa() >= 3.5) {
                 Utils.issueHonors(s);
             }
         }

@@ -9,6 +9,7 @@ import com.eltonb.fp.app.manually.predicates.*;
 import com.eltonb.fp.data.impl.StudentRepositoryFromFileImpl;
 import com.eltonb.fp.data.interfaces.StudentRepository;
 import com.eltonb.fp.model.Gender;
+import com.eltonb.fp.model.Level;
 import com.eltonb.fp.model.Student;
 
 import java.util.ArrayList;
@@ -52,7 +53,7 @@ public class MainAppManually {
         doStuff(students,
                 new StudentTranscriptPrinter(),
                 new StudentCheckerByGender(Gender.FEMALE),
-                new StudentCheckerByLevel(Student.Level.UNDERGRAD)
+                new StudentCheckerByLevel(Level.UNDERGRAD)
         );
     }
 

@@ -4,6 +4,7 @@ import com.eltonb.fp.app.Utils;
 import com.eltonb.fp.data.impl.StudentRepositoryFromFileImpl;
 import com.eltonb.fp.data.interfaces.StudentRepository;
 import com.eltonb.fp.model.Gender;
+import com.eltonb.fp.model.Level;
 import com.eltonb.fp.model.Student;
 
 import java.util.Comparator;
@@ -36,24 +37,24 @@ public class MainAppWithLambdas {
 
     private void sendNotifToCSStudentsInGpaRangeSortedByGpa(List<Student> students, double lo, double hi) {
         students.stream()
-                .filter(s -> "CS".equals(s.getDepartment()))
-                .filter(s -> s.getGpa() >= lo)
-                .filter(s -> s.getGpa() <= hi)
-                .sorted(Comparator.comparingDouble(Student::getGpa))
+                .filter(s -> "CS".equals(s.department()))
+                .filter(s -> s.gpa() >= lo)
+                .filter(s -> s.gpa() <= hi)
+                .sorted(Comparator.comparingDouble(Student::gpa))
                 .forEach(Utils::sendNotification);
     }
 
     private void printTranscriptForFemaleUndergrads(List<Student> students) {
         students.stream()
-                .filter(s -> s.getGender() == Gender.FEMALE)
-                .filter(s -> s.getLevel() == Student.Level.UNDERGRAD)
+                .filter(s -> s.gender() == Gender.FEMALE)
+                .filter(s -> s.level() == Level.UNDERGRAD)
                 .forEach(Utils::printTranscript);
     }
 
     private void issueHonorsToActiveStudents(List<Student> students) {
         students.stream()
-                .filter(not(Student::isGraduated))
-                .filter(s -> s.getGpa() >= 3.5)
+                .filter(not(Student::graduated))
+                .filter(s -> s.gpa() >= 3.5)
                 .forEach(Utils::issueHonors);
     }
 
