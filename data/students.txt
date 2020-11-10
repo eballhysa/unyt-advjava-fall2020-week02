@@ -9,10 +9,11 @@
 9 Yoshua Bengio CS PHD joshua.bengio@uni.edu Yes M 3.94 66
 10 David Patterson CS UNDERGRAD david.patterson@uni.edu No M 2.67 55
 11 Richard Feynmann PHYS UNDERGRAD richard.feynmann@uni.edu No M 3.88 89
-12 Marie Curie PHYS UNDERGRAD marie.curie@uni.edu No F 4.00 134
+12 Marie Curie CHEM UNDERGRAD marie.curie@uni.edu No F 4.00 134
 13 Carl Sagan PHYS MASTERS carl.sagan@uni.edu Yes M 3.89 36
 14 David Hilbert MATH MASTERS david.hilbert@uni.edu No M 3.21 20
 15 Richard Hamming EE PHD richard.hamming@uni.edu No M 2.98 59
 16 Kurt Gödel MATH MASTERS kurt.godel@uni.edu No M 3.01 100
 17 Ada Lovelace MATH MASTERS ada.lovelace@uni.edu No F 3.44 88
 18 Shafi Goldwasser MATH PHD shafi.goldwasser@uni.edu No F 3.47 92
+19 Pierre Curie PHYS UNDERGRAD pierre.curie@uni.edu No M 3.99 132

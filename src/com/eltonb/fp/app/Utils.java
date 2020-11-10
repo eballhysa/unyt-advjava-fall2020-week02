@@ -2,6 +2,8 @@ package com.eltonb.fp.app;
 
 import com.eltonb.fp.model.Student;
 
+import java.util.function.Predicate;
+
 public class Utils {
     private Utils() {
 
@@ -17,5 +19,9 @@ public class Utils {
 
     public static void issueHonors(Student s) {
         System.out.println("issuing honors degree for " + s.name() + " " + s.surname() + " [gpa: " + s.gpa() + "]");
+    }
+
+    public static <T> Predicate<T> not(Predicate<T> predicate) {
+        return predicate.negate();
     }
 }

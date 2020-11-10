@@ -9,7 +9,7 @@ import com.eltonb.fp.model.Student;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.function.Predicate;
+import static com.eltonb.fp.app.Utils.not;
 
 public class MainAppWithLambdas {
 
@@ -57,10 +57,5 @@ public class MainAppWithLambdas {
                 .filter(s -> s.gpa() >= 3.5)
                 .forEach(Utils::issueHonors);
     }
-
-    private <T> Predicate<T> not(Predicate<T> predicate) {
-        return predicate.negate();
-    }
-
 
 }
